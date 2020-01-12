@@ -1,6 +1,7 @@
 function findAdjacent(node, vertices, edges) {
     return edges.filter(edge => edge.includes(node)).map(edge => edge.filter(end => end !== node)[0])
         .map(name => findNode(name, vertices)).filter(node => node.distance === null)
+    //Not sure why I need to filter for the test to pass...
 }
 
 function findNode(nodeName, vertices) {
